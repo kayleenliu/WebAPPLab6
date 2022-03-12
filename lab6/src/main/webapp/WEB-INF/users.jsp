@@ -9,11 +9,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div>
-            <h1>User Management System</h1>
-            <h2>Add new user</h2>
+        <div class="p-3 mb-2 bg-dark text-white">
+            <h1 class="text-center">User Management System</h1>
+            <h2 class="text-center">Add new user</h2>
                 <form action="user" method="POST">
-                    <table class="table">
+                    <table class="table table-dark">
                         <thead>
                             <tr>
                                 <th>Email</th>
@@ -27,19 +27,19 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" class="form-control">
                                 </td>
                                 <td>
-                                    <input type="text" name="firstName">
+                                    <input type="text" name="firstName" class="form-control">
                                 </td>
                                 <td>
-                                    <input type="text" name="lastName">
+                                    <input type="text" name="lastName" class="form-control">
                                 </td>
                                 <td>
-                                    <input type="password" name="password">
+                                    <input type="password" name="password" class="form-control">
                                 </td>
                                 <td>
-                                    <select name="role">
+                                    <select name="role" class="form-control">
                                         <option value="">Please select a role</option>
                                         <c:forEach var="role" items="${roles}">
                                             <option value="${role.name}">${role.name}</option>
@@ -47,19 +47,19 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="active">
+                                    <input type="checkbox" name="active" class="form-check-input position-static">
                                 </td>
                                 <td>
-                                    <button type="submit" name="action" value="add">Add</button>
+                                    <button type="submit" name="action" value="add" class="btn btn-success btn-sm">Add</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
             
-            <h2>Users</h2>
+            <h2 class="text-center">Users</h2>
             <form action="user" method="POST" >
-                <table class="table">
+                <table class="table table-striped table-dark">
                     <thead>
                         <tr>
                             <th>Email</th>
@@ -77,8 +77,8 @@
                                 <td>${user.lastName}</td>
                                 <td>${user.active ? "Y" : "N"}</td>
                                 <td>
-                                    <button type="submit" name="action"  value="edit?${user.email}">Edit</button>
-                                    <button type="submit" name="action" value="delete?${user.email}">Delete</button>
+                                    <button type="submit" name="action"  value="edit?${user.email}" class="btn btn-info btn-sm">Edit</button>
+                                    <button type="submit" name="action" value="delete?${user.email}" class="btn btn-danger btn-sm">Delete</button>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -86,9 +86,9 @@
                 </table>
             </form>
             
-            <h2>Edit user</h2>
+            <h2 class="text-center">Edit user</h2>
             <form action="user" method="POST">
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Email</th>
@@ -102,19 +102,19 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input type="email" name="email" readonly value="${user.email}">
+                                <input type="email" name="email" readonly value="${user.email}" class="form-control">
                             </td>
                             <td>
-                                <input type="text" name="firstName" value="${user.firstName}">
+                                <input type="text" name="firstName" value="${user.firstName}" class="form-control">
                             </td>
                             <td>
-                                <input type="text" name="lastName" value="${user.lastName}">
+                                <input type="text" name="lastName" value="${user.lastName}" class="form-control">
                             </td>
                             <td>
-                                <input type="password" name="password" value="${user.password}">
+                                <input type="password" name="password" value="${user.password}" class="form-control">
                             </td>
                             <td>
-                                <select name="role">
+                                <select name="role" class="form-control">
                                     <option value="">Please select a role</option>
                                     <c:forEach var="role" items="${roles}">
                                         <option value="${role.name}">${role.name}</option>
@@ -122,10 +122,10 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="checkbox" name="active">
+                                <input type="checkbox" name="active" class="form-check-input position-static">
                             </td>
                             <td>
-                                <button type="submit" name="action" value="edit">Save</button>
+                                <button type="submit" name="action" value="edit" class="btn btn-success btn-sm">Save</button>
                             </td>
                         </tr>
                     </tbody>
