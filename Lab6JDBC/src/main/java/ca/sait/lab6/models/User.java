@@ -1,27 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ca.sait.lab6jdbc.models;
+
+package ca.sait.lab6.models;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Kayleen
- */
+
 public class User implements Serializable {
     private String email;
+    private boolean active;
     private String firstName;
     private String lastName;
     private String password;
-    private boolean active;
     private Role role;
-    public User(){
-        
+
+    public User() {
     }
-    
-    public User(String email, boolean active, String firstName, String lastName, String password, Role role){
+
+    public User(String email, boolean active, String firstName, String lastName, String password, Role role) {
         this.email = email;
         this.active = active;
         this.firstName = firstName;
@@ -36,6 +30,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getFirstName() {
@@ -62,14 +64,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
     public Role getRole() {
         return role;
     }
@@ -77,6 +71,7 @@ public class User implements Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
+    
     
     
     
